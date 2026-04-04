@@ -35,7 +35,7 @@ export class AjkLogin {
         await this.page.fill(this.passworde, password);
         await this.page.click(this.login);
        await this.page.fill(this.searche='#ai_query',search) 
-       await this.page.waitForTimeout(9000); // 3 seconds
+       await this.page.waitForTimeout(10000); // 3 seconds
        await this.page.getByRole('link', { name: 'ihtisham' }).click()
     }
 }

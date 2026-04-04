@@ -16,6 +16,6 @@ import { AjkLogin } from "../pages/ajklogin";
 test('testabc', async ({ page }) => {
     const tom = new AjkLogin(page);   // ✅ same class name
     await tom.gotoLoginPage();
-    await tom.logee('superadmin@gmail.com','AcmRad@2026@A2K!','ihtisham');
+    await tom.logee('in@gmail.com','AcmRad@2026@A2K!','ihtisham');
      
 });
