@@ -1,5 +1,5 @@
 import{test,expect} from '@playwright/test';
-test.skip('Dropdown', async ({ page }) => {
+test('Dropdown', async ({ page }) => {
     await page.goto('https://testautomationpractice.blogspot.com/')
 
  // Dialog window handler ( enable alert handling )
@@ -12,7 +12,7 @@ test.skip('Dropdown', async ({ page }) => {
 
     })
    await page.click('#alertBtn')
-   await page.waitForTimeout(5000);
+   await page.waitForTimeout(11000);
 
         });
 
