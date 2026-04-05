@@ -2,7 +2,7 @@ class cart {
 
     constructor (){
         this.page= this.page;
-        this.noofProduct=;
+        this.noofProduct=1;
         
     }
 async gotologinpage()

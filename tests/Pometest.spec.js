@@ -1,17 +1,17 @@
 import { test, expect } from '@playwright/test';
-import{loginPage,Homepage } from '../pages/loginpage';
-//import {Homepage} from '../pages/Homepage';
+import { loginPage } from '../pages/loginpage';
+import { Homepage } from '../pages/Homepage';
 
-test('test', async ({ page }) => {
+test('Add product to cart', async ({ page }) => {
 
-//login usepage object class
-const login= new loginPage(page)
-await login.gotoLoginPage();
-await login.loginn('shamkhansham','shamkhansham')
+    // // login
+    // const login = new loginPage(page);
+    // await login.gotoLoginPage();
+    // await login.loginn('shamkhansham', 'shamkhansham');
 
-//home
- const home= new Homepage(page)
- await home.AddProductTocart('ac')
+    // home
+    const home = new Homepage(page);
 
-
+    // exact product name (must match UI)
+    await home.AddProductTocart('Samsung galaxy s6');
 });

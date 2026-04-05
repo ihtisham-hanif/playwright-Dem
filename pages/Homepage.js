@@ -1,26 +1,33 @@
-export class Homepage
-{
-    constructor(page){
-        this.page=page;
-        this.productlist=
-        this.addtocartbtn='//a[normalize-space()="Add to cart"]';
-        this.cart=''
+export class Homepage {
+    constructor(page) {
+        this.page = page;
+
+        // locator for all product names
+        this.productlist = '.hrefch';
+
+        // Add to cart button
+        this.addtocartbtn = '//a[normalize-space()="Add to cart"]';
     }
 
-    async AddProductTocart(){
-       const productlist= await this.page$.$$(this.productlist);
-       for (product of productlist){ 
-        if (prductname== await product.textcotent()){
-            await product.click()
-            break;
+    async AddProductTocart(productName) {
+
+        const products = await this.page.$$(this.productlist);
+        console.log(products)
+
+        for (const product of products) {
+            const name = await product.textContent();
+
+            if (name.trim().toLowerCase() === productName.toLowerCase()) {
+                await product.click();
+                break;
+            }
         }
 
-       }
-    
-    await this.page.on('dialog', dialog => {
-    if (dialog.message().includes('added'))
-await dialog.accept();
-})
+        // handle alert popup
+        this.page.once('dialog', async dialog => {
+            await dialog.accept();
+        });
 
-await this.page.click(this.addtocartbtn)
+        await this.page.click(this.addtocartbtn);
+    }
 }

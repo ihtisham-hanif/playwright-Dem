@@ -24,6 +24,7 @@ export class AjkLogin {
         this.login = '//button[normalize-space()="Login"]'
         this.searche='#ai_query'
         //this.clickb='#submit'
+        this.ai_button = ".ai_query-container button"
     }
 
     async gotoLoginPage() {
@@ -34,8 +35,8 @@ export class AjkLogin {
         await this.page.fill(this.usernamee, username);
         await this.page.fill(this.passworde, password);
         await this.page.click(this.login);
-       await this.page.fill(this.searche='#ai_query',search) 
-       await this.page.waitForTimeout(10000); // 3 seconds
-       await this.page.getByRole('link', { name: 'ihtisham' }).click()
+       await this.page.fill(this.searche,search) 
+       await this.page.waitForTimeout(4000); // 3 seconds
+       await this.page.click(this.ai_button)
     }
 }

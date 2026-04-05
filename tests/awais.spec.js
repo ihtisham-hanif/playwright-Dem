@@ -12,11 +12,12 @@ await tom.welcome('superadmin@gmail.com','AcmRad@2026@AJK!')
 
 import { test, expect } from "@playwright/test";
 import { AjkLogin } from "../pages/ajklogin";
+import { asyncWrapProviders } from "async_hooks";
 
 test('testabc', async ({ page }) => {
     const tom = new AjkLogin(page);   // ✅ same class name
     await tom.gotoLoginPage();
-    await tom.logee('in@gmddsiiil.com','AcmRad@2026@A2K!','ihtisham');
-     
+    await tom.logee('superadmin@gmail.com','AcmRad@2026@AJK!','ihtisham');
+
 });
 
