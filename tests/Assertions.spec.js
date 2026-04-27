@@ -16,7 +16,7 @@ test('Assertionstest', async ({ page }) => {
    await expect('newsletter').toBeChecked
 
    //to have Text
-   await expect(await page .locator('.page-title h1')).toHaveText('Register')
+   await expect(await page .locator('.page-title h1')).toHaveText('Regist3er')
     });
 
     import{test,expect} from "@playwright/test";
